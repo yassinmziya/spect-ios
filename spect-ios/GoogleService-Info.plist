@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1089676320907-ur0uj350hap685ibbo1dbq5orkg6hjs5.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1089676320907-ur0uj350hap685ibbo1dbq5orkg6hjs5</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDhjUcS9BADjz1nzX0vINI5zqknffEOKUY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1089676320907</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>yassinmziya.spect-ios</string>
+	<key>PROJECT_ID</key>
+	<string>spect-ios</string>
+	<key>STORAGE_BUCKET</key>
+	<string>spect-ios.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1089676320907:ios:80b3380a763874c2</string>
+	<key>DATABASE_URL</key>
+	<string>https://spect-ios.firebaseio.com</string>
+</dict>
+</plist>
