@@ -22,6 +22,7 @@
 		1C8E939920EAD562002AE031 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E939820EAD562002AE031 /* RegisterViewController.swift */; };
 		1C8E939B20EAD8A2002AE031 /* CreateAccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E939A20EAD8A2002AE031 /* CreateAccountCollectionViewCell.swift */; };
 		1C8E939D20EAD904002AE031 /* PasswordCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E939C20EAD904002AE031 /* PasswordCollectionViewCell.swift */; };
+		1CB179F920ED8DE50044E205 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB179F820ED8DE50044E205 /* CustomTextField.swift */; };
 		934358F1269406522CDA3956 /* Pods_spect_ios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28D22E30404CD481AC0FC6CE /* Pods_spect_ios.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +44,7 @@
 		1C8E939820EAD562002AE031 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1C8E939A20EAD8A2002AE031 /* CreateAccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCollectionViewCell.swift; sourceTree = "<group>"; };
 		1C8E939C20EAD904002AE031 /* PasswordCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCollectionViewCell.swift; sourceTree = "<group>"; };
+		1CB179F820ED8DE50044E205 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		28D22E30404CD481AC0FC6CE /* Pods_spect_ios.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spect_ios.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D0425AC43B1D7DA744877D2 /* Pods-spect-ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spect-ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-spect-ios/Pods-spect-ios.debug.xcconfig"; sourceTree = "<group>"; };
 		940785839240C46E6C4AF1E3 /* Pods-spect-ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spect-ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-spect-ios/Pods-spect-ios.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				1C73278020E5E07F00B4280A /* AccountTypeCollectionViewCell.swift */,
 				1C8E939A20EAD8A2002AE031 /* CreateAccountCollectionViewCell.swift */,
 				1C8E939C20EAD904002AE031 /* PasswordCollectionViewCell.swift */,
+				1CB179F820ED8DE50044E205 /* CustomTextField.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				1C0ECD8D20E5C0DF001DEB69 /* ViewController.swift in Sources */,
 				1C73277720E5C8D600B4280A /* StartViewController.swift in Sources */,
 				1C47A80120E8257400A2FD55 /* LoginViewController.swift in Sources */,
+				1CB179F920ED8DE50044E205 /* CustomTextField.swift in Sources */,
 				1C73277F20E5D8D200B4280A /* SelectAccountTypeViewController.swift in Sources */,
 				1C73277520E5C54E00B4280A /* MyColors.swift in Sources */,
 				1C0ECD8B20E5C0DF001DEB69 /* AppDelegate.swift in Sources */,
