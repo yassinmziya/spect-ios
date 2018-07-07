@@ -18,6 +18,7 @@
 		1C73277D20E5CEF500B4280A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1C73277C20E5CEF500B4280A /* Assets.xcassets */; };
 		1C73277F20E5D8D200B4280A /* SelectAccountTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C73277E20E5D8D200B4280A /* SelectAccountTypeViewController.swift */; };
 		1C73278120E5E07F00B4280A /* AccountTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C73278020E5E07F00B4280A /* AccountTypeCollectionViewCell.swift */; };
+		1C7A397520F152A60044B9D4 /* AccountInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C7A397420F152A60044B9D4 /* AccountInformation.swift */; };
 		1C8E939720EACBDC002AE031 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1C8E939620EACBDC002AE031 /* GoogleService-Info.plist */; };
 		1C8E939920EAD562002AE031 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E939820EAD562002AE031 /* RegisterViewController.swift */; };
 		1C8E939B20EAD8A2002AE031 /* CreateAccountCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C8E939A20EAD8A2002AE031 /* CreateAccountCollectionViewCell.swift */; };
@@ -40,6 +41,7 @@
 		1C73277C20E5CEF500B4280A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1C73277E20E5D8D200B4280A /* SelectAccountTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAccountTypeViewController.swift; sourceTree = "<group>"; };
 		1C73278020E5E07F00B4280A /* AccountTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		1C7A397420F152A60044B9D4 /* AccountInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformation.swift; sourceTree = "<group>"; };
 		1C8E939620EACBDC002AE031 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1C8E939820EAD562002AE031 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		1C8E939A20EAD8A2002AE031 /* CreateAccountCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -101,6 +103,7 @@
 		1C73276F20E5C36200B4280A /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				1C7A397420F152A60044B9D4 /* AccountInformation.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-spect-ios/Pods-spect-ios-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -263,6 +267,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
@@ -292,6 +297,7 @@
 				1C73277F20E5D8D200B4280A /* SelectAccountTypeViewController.swift in Sources */,
 				1C73277520E5C54E00B4280A /* MyColors.swift in Sources */,
 				1C0ECD8B20E5C0DF001DEB69 /* AppDelegate.swift in Sources */,
+				1C7A397520F152A60044B9D4 /* AccountInformation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

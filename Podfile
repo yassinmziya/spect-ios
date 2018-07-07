@@ -9,5 +9,5 @@ target 'spect-ios' do
   pod 'SnapKit'
   pod 'Firebase/Core'
   pod 'Firebase/Database'
-  
+  pod 'Firebase/Auth'
 end

@@ -9,23 +9,33 @@
 import UIKit
 import SnapKit
 
+protocol CreateAccountDelegate {
+    func next(firstName: String, lastName: String)
+}
+
 class CreateAccountCollectionViewCell: UICollectionViewCell {
+    var delegate: CreateAccountDelegate!
+    
+    // consts
     var fieldHeight = 40
     var fieldTopMargin = 8
-    var fieldHorizontalMargin: CGFloat = 8
+    var fieldHorizontalMargin: CGFloat = 20
     var sectionTopMargin = 16
+    var buttonHeight: CGFloat = 40.0
     
+    
+    // views
     var firstNameLabel: UILabel!
     var firstNameField: UITextField!
     var lastNameLabel: UILabel!
     var lastNameField: UITextField!
     var dobLabel: UILabel!
-    var dobField: UIStackView!
-    var monthField: CustomTextField!
-    var dayField: CustomTextField!
-    var yearField: CustomTextField!
+    var monthField: UITextField!
+    var dayField: UITextField!
+    var yearField: UITextField!
     var studentCodeLabel: UILabel!
     var studentCodeField: UITextField!
+    var nextButton: UIButton!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -45,30 +55,34 @@ class CreateAccountCollectionViewCell: UICollectionViewCell {
         dobLabel = UILabel()
         dobLabel.text = "Date of Birth"
         
-        dayField = CustomTextField()
-        dayField.layer.backgroundColor = UIColor.white.cgColor
-        dayField.width = 4.0
-        dayField.backgroundColor = .red
-        
         monthField = CustomTextField()
-        monthField.layer.backgroundColor = UIColor.white.cgColor
-        monthField.width = 4.0
+        monthField.backgroundColor = .green
+        monthField.placeholder = "mm"
+        
+        dayField = CustomTextField()
+        dayField.backgroundColor = UIColor.white
+        dayField.placeholder = "dd"
     
         yearField = CustomTextField()
-        yearField.layer.backgroundColor = UIColor.white.cgColor
-        yearField.width = 8.0
         yearField.backgroundColor = .red
+        yearField.placeholder = "yyyy"
         
-        dobField = UIStackView(arrangedSubviews: [dayField, monthField, yearField])
-        dobField.axis = .horizontal
-        dobField.distribution = .fillProportionally
+        nextButton = UIButton()
+        nextButton.setTitle("Next", for: .normal)
+        nextButton.layer.cornerRadius = buttonHeight/2.0
+        nextButton.layer.backgroundColor = UIColor.spectDarkBlue.cgColor
+        nextButton.setTitleColor(.spectWhite, for: .normal)
+        nextButton.addTarget(self, action: #selector(handlePaging), for: .touchUpInside)
         
         contentView.addSubview(firstNameLabel)
         contentView.addSubview(firstNameField)
         contentView.addSubview(lastNameLabel)
         contentView.addSubview(lastNameField)
         contentView.addSubview(dobLabel)
-        contentView.addSubview(dobField)
+        contentView.addSubview(monthField)
+        contentView.addSubview(dayField)
+        contentView.addSubview(yearField)
+        contentView.addSubview(nextButton)
     }
     
     override func updateConstraints() {
@@ -100,13 +114,39 @@ class CreateAccountCollectionViewCell: UICollectionViewCell {
             make.top.equalTo(lastNameField.snp.bottom).offset(sectionTopMargin)
         }
         
-        dobField.snp.makeConstraints { make in
+        monthField.snp.makeConstraints { make in
             make.leading.equalTo(lastNameLabel)
-            make.leading.trailing.height.equalTo(firstNameField)
+            make.height.equalTo(fieldHeight)
+            make.width.equalTo(56)
             make.top.equalTo(dobLabel.snp.bottom).offset(fieldTopMargin)
         }
         
+        dayField.snp.makeConstraints { make in
+            make.leading.equalTo(monthField.snp.trailing).offset(fieldHorizontalMargin)
+            make.height.width.top.equalTo(monthField)
+        }
+
+        yearField.snp.makeConstraints { make in
+            make.trailing.equalTo(firstNameField)
+            make.top.height.equalTo(monthField)
+            make.leading.equalTo(dayField.snp.trailing).offset(fieldHorizontalMargin)
+        }
+            
+        nextButton.snp.makeConstraints { make in
+            make.centerX.equalToSuperview()
+            make.top.equalTo(monthField.snp.bottom).offset(sectionTopMargin*4)
+            make.height.equalTo(buttonHeight)
+            make.leading.trailing.equalTo(firstNameField)
+        }
+        
         super.updateConstraints()
+    }
+    
+    @objc func handlePaging() {
+        guard let firstName = firstNameField.text, let lastName = lastNameField.text else {
+            return
+        }
+        delegate.next(firstName: firstName, lastName: lastName)
     }
     
     required init?(coder aDecoder: NSCoder) {

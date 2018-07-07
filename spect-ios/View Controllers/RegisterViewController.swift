@@ -8,8 +8,11 @@
 
 import UIKit
 import SnapKit
+import FirebaseAuth
 
-class RegisterViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+class RegisterViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, RegisterDelegate, CreateAccountDelegate {
+    var accountInfo: AccountInformation = AccountInformation()
+    
     // consts
     let pages: Int = 2
     let accountCellReuseId: String = "accountCellReuseId"
@@ -47,10 +50,12 @@ class RegisterViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         if(indexPath.row == 0) {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: accountCellReuseId, for: indexPath) as! CreateAccountCollectionViewCell
+            cell.delegate = self
             cell.setNeedsUpdateConstraints()
             return cell
         }
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: passwordCellReuseId, for: indexPath) as! PasswordCollectionViewCell
+        cell.delegate = self
         cell.setNeedsUpdateConstraints()
         return cell
     }
@@ -58,6 +63,8 @@ class RegisterViewController: UIViewController, UICollectionViewDelegateFlowLayo
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: view.frame.width, height: view.frame.height)
     }
+    
+    
     
     func setupConstraints() {
         collectionView.snp.makeConstraints { make in
@@ -81,4 +88,23 @@ class RegisterViewController: UIViewController, UICollectionViewDelegateFlowLayo
     }
     */
 
+}
+
+extension RegisterViewController {
+    func handleRegister(password: String) {
+        accountInfo.setPassword(password: password)
+        Auth.auth().createUser(withEmail: "\(accountInfo.firstName!)\(accountInfo.lastName!)@gmail.com", password: accountInfo.password!) { (authResult, error) in
+            if let error = error {
+                print(error);
+                return
+            }
+            print("me!")
+        }
+    }
+    
+    func next(firstName: String, lastName: String) {
+        accountInfo.setName(firstName: firstName, lastName: lastName)
+        let indexPath: IndexPath = IndexPath(item: 1, section: 0)
+        collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.centeredHorizontally, animated: true)
+    }
 }
